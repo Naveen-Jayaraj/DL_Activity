@@ -11,3 +11,4 @@ venv/
 
 # Large raw dataset archive (the notebook loads directly or downloads via kagglehub)
 dataset/
+*.zip

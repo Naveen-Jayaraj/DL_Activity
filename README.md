@@ -27,48 +27,26 @@ Telling crop seedlings from weed seedlings at an early growth stage allows farme
 
 ## 🗂️ Project Structure
 ```
-c:\Users\USER\Desktop\Activity\
-├── plant_seedling_classification.ipynb  # End-to-end complete Jupyter Notebook
-├── download_competition.py              # Script to download and extract dataset via kagglehub
-├── configure_kaggle.py                  # Quick CLI script to save ~/.kaggle/kaggle.json
-├── build_notebook.py                    # Generator script for the notebook
-├── README.md                            # Documentation and project manual
-└── dataset/                             # Created upon download (train/, test/, sample_submission.csv)
+├── RegisterNo_PS09.ipynb      # End-to-end trained Jupyter Notebook (all cell outputs & figures embedded)
+├── RegisterNo_PS09_Report.md  # Comprehensive Agronomic & Computer Vision Technical Report
+├── README.md                  # Project overview and documentation
+└── .gitignore                 # Git ignore rules (caches, weights, raw dataset archives)
 ```
 
 ---
 
-## 🚀 Quickstart Guide
+## 🚀 Quickstart & Notebook Execution
 
-### Step 1: Accept Competition Rules & Configure Kaggle API
-1. Open the [Kaggle Competition Rules](https://www.kaggle.com/c/plant-seedlings-classification/rules) and click **"I Understand and Accept"**.
-2. Go to [Kaggle Account Settings](https://www.kaggle.com/settings) and click **"Create New Token"** to download `kaggle.json`.
-3. Run the configuration helper or manually place the file:
-   ```bash
-   python configure_kaggle.py
-   ```
-   *(Or place `kaggle.json` inside `~/.kaggle/kaggle.json`)*
-
-### Step 2: Download Dataset
-Run the automated downloader:
-```bash
-python download_competition.py
-```
-Or directly inside Python / the notebook:
-```python
-import kagglehub
-path = kagglehub.competition_download('plant-seedlings-classification')
-print("Path to competition files:", path)
-```
-
-### Step 3: Open & Run the Jupyter Notebook
-Open [`plant_seedling_classification.ipynb`](file:///c:/Users/USER/Desktop/Activity/plant_seedling_classification.ipynb) in VS Code, JupyterLab, or upload to Kaggle Notebooks / Google Colab:
-- **Section 1:** Environment setup & seed fixing
-- **Section 2:** Kaggle authentication & archive extraction
-- **Section 3:** Exploratory Data Analysis (EDA, class balance, ExG chlorophyll index, confusing monocot pairs)
-- **Section 4:** Stratified 80/20 train-val split & 360° rotational augmentations
-- **Section 5:** Transfer learning with ResNet-34 / EfficientNet architecture
-- **Section 6:** Training with label smoothing ($\epsilon=0.1$) & cosine annealing scheduler
-- **Section 7:** Model diagnostics, confusion matrix & misclassification analysis
-- **Section 8:** Test-Time Augmentation (TTA) & Kaggle `submission.csv` generation
-- **Section 9:** Precision agriculture deployment, tractor speed vs latency, and edge AI roadmap
+### Open & Run the Jupyter Notebook
+Open [`RegisterNo_PS09.ipynb`](file:///c:/Users/USER/Desktop/Activity/RegisterNo_PS09.ipynb) in VS Code, JupyterLab, or Google Colab:
+- **Step 1:** Kaggle authentication and credentials setup
+- **Step 2:** Automatic archive ingestion from `plant-seedlings-classification.zip` / `kagglehub`
+- **Step 3:** Exploratory Data Analysis (EDA, 12-species counts, visual sample gallery)
+- **Step 4:** Stratified 70/15/15 train-val-test split (fixed seed 42)
+- **Step 5:** Preprocessing, $360^\circ$ rotational augmentation & ImageNet normalization
+- **Step 6:** Custom CNN baseline vs. Pretrained ResNet-34 transfer learning models
+- **Step 7:** Model training with label smoothing ($\epsilon=0.1$) & cosine annealing scheduler
+- **Step 8:** Loss & accuracy convergence curve visualization
+- **Step 9:** Single evaluation on hold-out test set (89.76% accuracy, 87.96% Macro F1) & confusion matrix
+- **Step 10:** Misclassification analysis with sample images & botanical root-cause explanations
+- **Step 11:** Explicit treatment of specific challenge (fine-grained look-alikes & class imbalance)

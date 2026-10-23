@@ -106,29 +106,29 @@ Fine-grained image classification is characterized by **high intra-class varianc
 
 | Model Architecture | Pretrained Weights | Training Loss | Val Loss | Test Accuracy | Test Macro F1 |
 |---|---|---|---|---|---|
-| **Custom CNN (Scratch)** | None (Random Init) | 1.8420 | 1.7650 | 58.42% | 55.18% |
-| **ResNet-34 (Transfer Learning)** | ImageNet-1k | **0.6512** | **0.5840** | **94.81%** | **94.27%** |
+| **Custom CNN (Scratch)** | None (Random Init) | 2.0941 | 1.9540 | 38.33% | 34.20% |
+| **ResNet-34 (Transfer Learning)** | ImageNet-1k | **0.8638** | **0.7478** | **89.76%** | **87.96%** |
 
-*Finding:* Transfer learning improves test accuracy by **+36.39 percentage points**, validating that fine-grained botanical classification requires rich pre-trained edge, texture, and contour representations.
+*Finding:* Transfer learning improves test accuracy by **+51.43 percentage points** over training from scratch, validating that fine-grained botanical classification requires rich pre-trained edge, texture, and contour representations.
 
-### 5.2 Per-Class Classification Report on Hold-Out Test Set
+### 5.2 Per-Class Classification Report on Hold-Out Test Set (Rule 5e)
 
 | Species Name | Class Type | Precision | Recall | F1-Score | Support |
 |---|---|---|---|---|---|
-| **Black-grass** | Weed | 0.9020 | 0.8846 | 0.8932 | 52 |
-| **Charlock** | Weed | 0.9831 | 0.9667 | 0.9748 | 60 |
-| **Cleavers** | Weed | 0.9792 | 0.9792 | 0.9792 | 48 |
-| **Common Chickweed** | Weed | 0.9381 | 0.9479 | 0.9429 | 96 |
-| **Common wheat** | Crop | 0.9143 | 0.9412 | 0.9275 | 34 |
-| **Fat Hen** | Weed | 0.9545 | 0.9333 | 0.9438 | 75 |
-| **Loose Silky-bent** | Weed | 0.9167 | 0.9271 | 0.9219 | 96 |
-| **Maize** | Crop | 0.9688 | 0.9394 | 0.9538 | 33 |
-| **Scentless Mayweed** | Weed | 0.9298 | 0.9464 | 0.9381 | 56 |
-| **Shepherds Purse** | Weed | 0.9091 | 0.8824 | 0.8955 | 34 |
-| **Small-flowered Cranesbill** | Weed | 0.9722 | 0.9859 | 0.9790 | 71 |
-| **Sugar beet** | Crop | 0.9825 | 0.9655 | 0.9739 | 58 |
-| **Overall / Macro Average** | - | **0.9459** | **0.9416** | **0.9427** | **713** |
-| **Weighted Average** | - | **0.9485** | **0.9481** | **0.9482** | **713** |
+| **Black-grass** | Weed | 0.6129 | 0.4872 | 0.5429 | 39 |
+| **Charlock** | Weed | 0.9500 | 0.9828 | 0.9661 | 58 |
+| **Cleavers** | Weed | 0.9512 | 0.9070 | 0.9286 | 43 |
+| **Common Chickweed** | Weed | 0.9082 | 0.9674 | 0.9368 | 92 |
+| **Common wheat** | Crop | 0.8929 | 0.7576 | 0.8197 | 33 |
+| **Fat Hen** | Weed | 0.9692 | 0.8750 | 0.9197 | 72 |
+| **Loose Silky-bent** | Weed | 0.8333 | 0.8673 | 0.8500 | 98 |
+| **Maize** | Crop | 0.8919 | 1.0000 | 0.9429 | 33 |
+| **Scentless Mayweed** | Weed | 0.8621 | 0.9615 | 0.9091 | 78 |
+| **Shepherds Purse** | Weed | 1.0000 | 0.7059 | 0.8276 | 34 |
+| **Small-flowered Cranesbill** | Weed | 0.9868 | 1.0000 | 0.9934 | 75 |
+| **Sugar beet** | Crop | 0.8750 | 0.9655 | 0.9180 | 58 |
+| **Macro Average** | - | **0.8945** | **0.8731** | **0.8796** | **713** |
+| **Weighted Average** | - | **0.8973** | **0.8976** | **0.8945** | **713** |
 
 ---
 
